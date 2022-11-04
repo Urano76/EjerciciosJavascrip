@@ -1,0 +1,20 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background: url(atardecer3.jpeg);
+}
+
+h1,
+h2 {
+    color: rgb(51, 144, 30);
+    size: 116px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: aqua;
+    size: 110px;
+}
