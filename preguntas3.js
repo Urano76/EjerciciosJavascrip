@@ -1,26 +1,36 @@
-let preguntas = ['Cual es tu nombre', 'Donde estudias', 'Nivel de estudios'];
-let respuestas = [];
-
-function interrogacion(i) {
-    process.stdout.write(`\n${preguntas[i]}`);
+let interrogacion = [
+    'Como te llamas',
+    'Donde estudias',
+    'Cuantos años tienes',
+    'Que nivel de estudios tienes'];
+    
+    let contestar = [];
+    
+    function preguntar(b){
+    
+    process.stdout.write(`${interrogacion[b]}\n`);
     console.log('\n');
-    process.stdout.write("   ");
-}
-process.stdin.on('data', function(data) {
-    // process.stdout.write('\n' + data.toString().trim() + '\n');
-    respuestas.push(data.toString().trim());
-    if (respuestas.length < preguntas.length) {
-        interrogacion(respuestas.length);
-    } else {
-        process.exit();
+    process.stdout.write("  "); 
+    
     }
-});
-process.on('exit', function() {
+    
+    
+    process.stdin.on('data', function(data) {
+    
+    contestar.push(data.toString().trim());
+    if(contestar.length < interrogacion.length) {
+    preguntar(contestar.length);
+    }
+    else {
+    process.exit();
+    }
+    
+    });
+    
+    process.on('exit',function() {
     process.stdout.write('\n\n\n');
-    process.stdout.write(`Vete a descansar`);
+    process.stdout.write('Ha concluido el ejercicio');
     process.stdout.write('\n\n\n');
-})
-interrogacion(0);
-// process.stdout.write("Hola putitos\n");
-// console.log('\n');
-// process.stdout.write('Me la pelas\n');
+    });
+    
+    preguntar(0);
